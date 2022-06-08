@@ -1,3 +1,20 @@
-const date = new Date();
+console.log("RUN!!");
+const contactList = require("./contacts");
 
-console.log(date.getFullYear());
+const invokeAction = async ({ action, id, name, email, phone }) => {
+    try {
+        switch (action) {
+            case "list":
+                const result = await contactList.listContacts();
+                console.log(result);
+                break;
+            
+            default:
+                console.log("Wrong action");
+        }
+    } catch (error) {
+        console.log(error.message);
+    }
+}
+
+invokeAction({ action: "list" });
