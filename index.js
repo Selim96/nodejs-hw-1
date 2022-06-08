@@ -33,19 +33,6 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
     }
 }
 
-// invokeAction({ action: "list" });
-// invokeAction({action: "get", id: "1"});
-// invokeAction({action: "add", name: "Girl genius", email: "Foglio", phone: "888-88888"});
-// invokeAction({action: "remove", id: "g94NWkFuunG_P1I6-siex"});
-
-// const acrionIndex = process.argv.findIndex(item => item === "--action");
-// if (acrionIndex !== -1) {
-//     const action = process.argv[acrionIndex + 1];
-//     console.log(typeof action)
-//     invokeAction({action});
-// }
-
 const arr = hideBin(process.argv);
 const {argv} = yargs(arr);
-console.log(argv);
 invokeAction(argv);
