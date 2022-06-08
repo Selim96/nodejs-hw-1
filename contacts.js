@@ -15,17 +15,17 @@ async function listContacts() {
 
 async function getContactById(contactId) {
     const contactsList = await listContacts();
-    const contact = contactsList.find(item => item.id === contactId);
-    if (!contact) {
+    const oneContact = contactsList.find(item => item.id === contactId);
+    if (!oneContact) {
         return null;
     }
-    return contact;
+    return oneContact;
 }
 
 async function removeContact(contactId) {
     const contactsList = await listContacts();
     const indexToRemove = contactsList.findIndex(item => item.id === contactId);
-    if (idexToRemove === -1) {
+    if (indexToRemove === -1) {
         return null;
     }
     const [result] = contactsList.splice(indexToRemove, 1);
